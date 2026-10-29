@@ -1,0 +1,29 @@
+name: B Secure checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          for file in bg.js crypto.js lock.js options.js popup.js ui.js tests/*.cjs; do
+            node --check "$file" || exit 1
+          done
+      - name: Security and package regression tests
+        run: |
+          node tests/security.test.cjs
+          node tests/package.test.cjs
