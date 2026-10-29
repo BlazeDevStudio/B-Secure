@@ -15,7 +15,7 @@ function showRemaining(r){
   const line=document.getElementById('attempts');
   if(r.remaining===undefined){line.hidden=true;return;}
   line.hidden=false;
-  line.textContent=String(r.remaining)+' attempt(s) remaining before the configured threshold.';
+  line.textContent=String(r.remaining)+' tries left.';
 }
 function cooldown(ms){
   until=Date.now()+ms;
@@ -44,7 +44,7 @@ document.getElementById('unlock-form').addEventListener('submit',async e=>{
     const r=await send('UNLOCK',{password:value});
     if(!r.ok){playState('fail');showRemaining(r);if(r.wait)cooldown(r.wait);else messageFor('message',r.error,'bad');pw.focus();return;}
     playState('success');
-    messageFor('message',r.restored?'Unlocked. Restoring your tab…':'Unlocked. Choose a parked tab to restore it.','good');
-  }finally{if(Date.now()>=until)setBusy('unlock',false,'Unlock browser');}
+    messageFor('message',r.restored?'Unlocked.':'Unlocked.','good');
+  }finally{if(Date.now()>=until)setBusy('unlock',false,'Unlock');}
 });
 start();

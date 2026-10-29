@@ -2,7 +2,7 @@
 async function refresh(){
   const r=await send('STATUS');if(!r.ok)return messageFor('message',r.error,'bad');
   const s=document.getElementById('state');s.textContent=!r.configured?'Setup':r.locked?'Locked':'Unlocked';s.className='pill '+(r.configured&&!r.locked?'ok':'warn');
-  document.getElementById('sub').textContent=!r.configured?'Create a password to begin.':r.locked?'Unlock to continue browsing.':'Your current session is accessible.';
+  document.getElementById('sub').textContent=!r.configured?'Create a password to begin.':r.locked?'Enter password.':'Ready.';
   document.getElementById('setup').hidden=!!r.configured;
   document.getElementById('lock').hidden=!r.configured||r.locked;
   document.getElementById('unlock-form').hidden=!r.configured||!r.locked;

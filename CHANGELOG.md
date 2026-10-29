@@ -1,5 +1,19 @@
 # Changelog
 
+## 11.5.0 — settings refinement and source organization
+- PayPal QR in the left settings margin on desktop, moved below forms on narrow screens.
+- Password creation acknowledgement and clear password-recovery warning.
+- Split styles, settings controllers, and worker policy into separate source modules; keep extension Z artwork and runtime security behavior.
+
+
+## 11.4.0 — interface cleanup
+- Separate padlock brand mark for in-page B Secure header (Z extension icon unchanged).
+- Single-column settings layout and collapsed PayPal QR area.
+- Remove promotional features, decorative headings and redundant wording.
+- Flat blue/white/black palette with restrained red only for alerts/status.
+- Simpler lock screen and popup; animations and settings IDs preserved.
+- No change to authentication, relock settings, tab handling or security policies.
+
 ## 11.3.0 — browser-close timer
 - Configurable immediate / delayed (1–1440 minutes) / disabled automatic relock in Settings.
 - Last normal Chrome-window close timestamp, background-process window reopening check, once-a-minute fallback heartbeat.
