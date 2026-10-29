@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.5.0 — settings refinement and source organization
+- PayPal QR in the left settings margin on desktop, moved below forms on narrow screens.
+- Password creation acknowledgement and clear password-recovery warning.
+- Split styles, settings controllers, and worker policy into separate source modules; keep extension Z artwork and runtime security behavior.
+
+
 ## 11.4.0 — interface cleanup
 - Separate padlock brand mark for in-page B Secure header (Z extension icon unchanged).
 - Single-column settings layout and collapsed PayPal QR area.

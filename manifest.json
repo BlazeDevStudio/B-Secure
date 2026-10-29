@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "B Secure",
   "short_name": "B Secure",
-  "version": "11.4.0",
+  "version": "11.5.0",
   "description": "B Secure local Chrome lock with low-memory tab recovery and configurable failed-attempt protections. By L.C.Manreal.",
   "icons": {
     "16": "assets/bsecure-z-16.png",

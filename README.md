@@ -1,4 +1,4 @@
-# B Secure 11.4.0 — streamlined interface
+# B Secure 11.5.0 — settings and source organization
 
 By **L.C.Manreal** — **manrealloumer@gmail.com**.
 
@@ -29,3 +29,9 @@ No continuous background process or external network service is used. Startup st
 
 ## Design revision (v11.4.0)
 The **Z artwork remains unchanged** in the Chrome toolbar and extension icons. The in-page header uses a separate local SVG padlock mark (blue/white with a small red status dot). Settings are now single-column and task-based: password, security, session, an optional collapsed donation QR, and contact. Promotional feature cards, gradients, unnecessary lock-screen paragraphs, and repetitive footers have been removed. Reduced-motion behavior is supported. No external dependencies.
+
+## 11.5.0 — Settings UI and source layout
+- The donation QR is placed in a compact left rail on wide screens (moves below controls on narrower windows).
+- Password creation requires acknowledgement that **B Secure has no password recovery**. A password cannot be recovered from its hash. Users can remove/reset the extension or create another profile; deleting the entire Chrome profile is **not a guaranteed requirement** and deleting profile data can cause needless data loss.
+- Split CSS by view under `styles/`, settings controllers under `settings/`, and password policy under `core/`. MV3 worker behavior and previous security protections are preserved.
+- No external assets, cloud services, trackers or frameworks.
