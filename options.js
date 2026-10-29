@@ -20,7 +20,7 @@ async function refresh(){
   state.textContent=!configured?'Setup needed':r.locked?'Locked':'Protected';
   state.className='pill '+(configured&&!r.locked?'ok':'warn');
   document.getElementById('save').textContent=configured?'Change password':'Create password';
-  document.getElementById('settings-sub').textContent=configured?'Enter your current password before changing it.':'Create your first password to activate protection.';
+  document.getElementById('settings-sub').textContent=configured?'Current password required to change.':'Create a password to begin.';
   const p=r.policy||{maxAttempts:5,cooldownMinutes:5,closeOnLimit:true,blockNewTabs:true,relockMode:'immediate',relockMinutes:5};
   document.getElementById('maxAttempts').value=String(p.maxAttempts);
   document.getElementById('cooldownMinutes').value=String(p.cooldownMinutes);
@@ -57,8 +57,8 @@ document.getElementById('policy-form').addEventListener('submit',async e=>{
 });
 document.getElementById('lock').addEventListener('click',async()=>{
   setBusy('lock',true,'','Locking…');
-  try{const r=await send('LOCK');messageFor('action-message',r.ok?'Browser session locked.':r.error,r.ok?'good':'bad');await refresh();}
-  finally{setBusy('lock',false,'Lock browsing session now');}
+  try{const r=await send('LOCK');messageFor('action-message',r.ok?'Locked.':r.error,r.ok?'good':'bad');await refresh();}
+  finally{setBusy('lock',false,'Lock now');}
 });
 document.getElementById('export').addEventListener('click',async()=>{
   const r=await send('EXPORT_RECOVERY');if(!r.ok)return messageFor('action-message',r.error,'bad');

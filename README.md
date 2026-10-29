@@ -1,11 +1,11 @@
-# B Secure 11.3.0 — configurable browser-close relock
+# B Secure 11.4.0 — streamlined interface
 
 By **L.C.Manreal** — **manrealloumer@gmail.com**.
 
 ## What's changed
 - Replaces all old extension, toolbar, tab favicon, lock-screen header, options, and popup brand icons with the **exact Z artwork supplied by the author on October 30, 2026** (original file included at `assets/bsecure-z-original.png`).
 - Native 16/32/48/64/128/256px PNG resizes use only Pillow/Lanczos and preserve original geometry, colors, red dot and dark rounded background. No generated/reimagined logo is used.
-- Version increment to 11.3.0; the lock/unlock CSS animations and lock motif from 11.1 are retained unchanged.
+- Version increment to 11.4.0; the lock/unlock CSS animations and lock motif from 11.1 are retained unchanged.
 - No changes to password, attempt counters, tab locking or other security-critical runtime logic.
 
 ## Install
@@ -26,3 +26,6 @@ In Settings → Failed-attempt protection → Automatic relock, choose **Immedia
 Time measurement: The extension records when the **last normal Chrome window is closed**. Chrome may stay running in the background; new windows still check the elapsed time. If Chrome is forcibly terminated/crashes before the last-window event is saved, a once-per-minute heartbeat approximates the close time. This can relock **earlier than configured** in the worst case. This best-effort mechanism cannot protect another browser profile or a person who can disable extensions, edit the Chrome profile, or access Chrome internal pages.
 
 No continuous background process or external network service is used. Startup state is persisted in chrome.storage.local; the service worker uses chrome.storage.session for its within-session state.
+
+## Design revision (v11.4.0)
+The **Z artwork remains unchanged** in the Chrome toolbar and extension icons. The in-page header uses a separate local SVG padlock mark (blue/white with a small red status dot). Settings are now single-column and task-based: password, security, session, an optional collapsed donation QR, and contact. Promotional feature cards, gradients, unnecessary lock-screen paragraphs, and repetitive footers have been removed. Reduced-motion behavior is supported. No external dependencies.

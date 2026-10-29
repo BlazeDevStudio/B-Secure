@@ -1,5 +1,13 @@
 # Changelog
 
+## 11.4.0 — interface cleanup
+- Separate padlock brand mark for in-page B Secure header (Z extension icon unchanged).
+- Single-column settings layout and collapsed PayPal QR area.
+- Remove promotional features, decorative headings and redundant wording.
+- Flat blue/white/black palette with restrained red only for alerts/status.
+- Simpler lock screen and popup; animations and settings IDs preserved.
+- No change to authentication, relock settings, tab handling or security policies.
+
 ## 11.3.0 — browser-close timer
 - Configurable immediate / delayed (1–1440 minutes) / disabled automatic relock in Settings.
 - Last normal Chrome-window close timestamp, background-process window reopening check, once-a-minute fallback heartbeat.
