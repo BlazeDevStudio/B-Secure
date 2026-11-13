@@ -1,5 +1,8 @@
 # B Secure — Privacy Policy
 
+**Website privacy policy:** https://blazedevstudio.pages.dev/b-secure/privacy/  
+**GitHub Pages mirror:** https://blazedevstudio.github.io/b-secure/privacy/
+
 **Effective date:** November 13, 2026  
 **Developer:** L.C.Manreal (BlazeDevStudio)  
 **Contact:** manrealloumer@gmail.com
